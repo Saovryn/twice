@@ -1,0 +1,19 @@
+local games = {
+    [7798947148] = {
+        Name = "Anime Final Quest",
+        ScriptURL = "https://pastefy.app/DCyJkNVA/raw"
+    },
+}
+
+local gameInfo = games[game.GameId]
+if not gameInfo then return end
+
+pcall(function()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "TWICE Loader",
+        Text = gameInfo.Name .. " script loaded\nMade By: Yuki",
+        Duration = 3
+    })
+end)
+
+loadstring(game:HttpGet(gameInfo.ScriptURL))()
